@@ -3,21 +3,20 @@ using namespace std;
 
 void print( string s)
 {
-  bool a=0;
+  bool flag =true;
   for(int i=0;i<s.size();i++)
   {
-      if(s[i]>='A'&&s[i]<='Z')
-      {
-          a=1;
-      }
-      else if (s[i]>='0'&&s[i]<='9')
-      {
-          a=0;
+      if(i==0&&s[i]=='-')continue;
+      else if(s[i]=='.')continue;
+      else if(s[i]>=48&&s[i]<=57)continue;
+      else{
+           flag=false;
+            break;
       }
   }
-  if(a)cout<< "NOT NEWMERIC";
-  else if (a==0)cout<< "NEWMERIC CONSTANT";
-  else cout<< "your input is incorrect";
+  if(!flag)cout<< "NOT NEWMERIC";
+  else cout.<< "NEWMERIC CONSTANT";
+  //else cout<< "your input is incorrect";
 
 }
 int main()
